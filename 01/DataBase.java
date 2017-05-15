@@ -19,13 +19,13 @@ public class DataBase {
 	private static final String url="jdbc:oracle:thin:@127.0.0.1:1521:orcl";//数据库URL
 	private static final String username="scott";  //数据库用户账号
 	private static final String password="tiger";   //数据库用户密码
-	
+	protected Connection con=null;
 	public void getConnect(){
 		
 		try {
 			Class.forName(driver);
 			//1.加载驱动,2.建立到数据库连接(url,username,password);
-			Connection con=DriverManager.getConnection(url,username,password);
+			con=DriverManager.getConnection(url,username,password);
 			System.out.println(con);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
